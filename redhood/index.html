@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../style.css" media="all" />
+	<link type="text/css" href="../jquery.jscrollpane.css" rel="stylesheet" media="all" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.jscrollpane.min.js"></script>
+	<title>Красная шапочка</title>
+</head>
+<body>
+	<div id="scrollbar">
+		<ul style="width: 1400px;">
+			<li data-page="http://drugdealers.ru/redhood/1/redhood_1.html" data-slide="1">
+				<img src="redhood_1.jpg" alt="" >
+				<p class='description'>1</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/2/redhood_2.html" data-slide="2">
+				<img src="redhood_2.jpg" alt="" >
+				<p class='description'>2</p>
+			</li>
+			<li data-page ="http://drugdealers.ru/redhood/3/redhood_3.html" data-slide="3">
+				<img src="redhood_3.jpg" alt="" >
+				<p class='description'>3</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/4/redhood_4.html" data-slide="4">
+				<img src="redhood_4.jpg" alt="" >
+				<p class='description'>4</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/5/redhood_5.html" data-slide="5">
+				<img src="redhood_5.jpg" alt="" >
+				<p class='description'>5</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/6/redhood_6.html" data-slide="6">
+				<img src="redhood_6.jpg" alt="" >
+				<p class='description'>6</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/7/redhood_7.html" data-slide="7">
+				<img src="redhood_7.jpg" alt="" >
+				<p class='description'>7</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/8/redhood_8.html" data-slide="8">
+				<img src="redhood_8.jpg" alt="" >
+				<p class='description'>8</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/9/redhood_9.html" data-slide="9">
+				<img src="redhood_9.jpg" alt="" >
+				<p class='description'>9</p>
+			</li>
+			<li data-page="http://drugdealers.ru/redhood/10/redhood_10.html" data-slide="10">
+				<img src="redhood_10.jpg" alt="" >
+				<p class='description'>10</p>
+			</li>
+		</ul>
+	</div>
+	<iframe src="http://drugdealers.ru/redhood/1/redhood_1.html" frameborder="0"></iframe>
+	<h1>Красная шапочка, страница </h1>
+	<script type="text/javascript">
+		$(function(){
+		
+		
+			if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
+			document.location = "http://drugdealers.ru/viewer/redhood/ipad.html";
+			} 
+			$('h1').append('<span class="slide_number">' + 1 + '</span>');
+			$('#scrollbar ul li').on('click', function() {
+				var page = $(this).attr('data-page');
+				console.log(page);
+				$('iframe').attr('src', page);
+				var number = $(this).attr('data-slide');
+				console.log(number);
+				$('h1 .slide_number').text(number);
+				
+			})
+		
+			$('#scrollbar').jScrollPane({
+				showArrows: true,
+				horizontalDragMinWidth: 34,
+				horizontalDragMaxWidth: 34
+			});
+			document.body.addEventListener('touchmove', function(event) {
+				event.preventDefault();
+			}, false);
+		});
+	</script>
+</body>
+</html>

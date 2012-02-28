@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../style.css" media="all" />
+	<title>Курочка Ряба</title>
+</head>
+<body>
+	<div id="scrollbar">
+		<ul>
+			<li data-page="http://drugdealers.ru/ryaba/1/chick_1.html">
+				<img src="chick_1.jpg" alt="" >
+				<p class='description'>1</p>
+			</li>
+			<li data-page="http://drugdealers.ru/ryaba/2/chick_2.html">
+				<img src="chick_2.jpg" alt="" >
+				<p class='description'>2</p>
+			</li>
+			<li data-page="http://drugdealers.ru/ryaba/3/chick_3.html">
+				<img src="chick_3.jpg" alt="" >
+				<p class='description'>3</p>
+			</li>
+			<li data-page="http://drugdealers.ru/ryaba/4/chick_4.html">
+				<img src="chick_4.jpg" alt="" >
+				<p class='description'>4</p>
+			</li>
+			<li data-page="http://drugdealers.ru/ryaba/5/chick_5.html">
+				<img src="chick_5.jpg" alt="" >
+				<p class='description'>5</p>
+			</li>
+			<li data-page="http://drugdealers.ru/ryaba/6/chick_6.html">
+				<img src="chick_6.jpg" alt="" >
+				<p class='description'>6</p>
+			</li>
+		</ul>
+	</div>
+	<iframe class="vertical" src="http://drugdealers.ru/ryaba/1/chick_1.html" frameborder="0"></iframe>
+	<h1>Курочка Ряба, страница </h1>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
+			document.location = "http://drugdealers.ru/viewer/ryaba/ipad.html";
+			} 
+		
+			$('#scrollbar ul li').on('click', function() {
+				var page = $(this).attr('data-page');
+				console.log(page);
+				$('iframe').attr('src', page);
+				
+			})
+		});
+	</script>
+</body>
+</html>

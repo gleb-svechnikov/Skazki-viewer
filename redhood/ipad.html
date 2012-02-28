@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../style.css" media="all" />
+	<link type="text/css" href="../jquery.jscrollpane.css" rel="stylesheet" media="all" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.jscrollpane.min.js"></script>
+	<title>Красная шапочка</title>
+</head>
+<body>
+	<h1>Красная шапочка</h1>
+	<div id="scrollbar">
+		<ul style="width: 1400px;">
+			<li>
+				<a href="http://drugdealers.ru/redhood/1/redhood_1.html" target="_blank">
+					<img src="redhood_1.jpg" alt="" >
+					<p class='description'>1</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/2/redhood_2.html" target="_blank">
+					<img src="redhood_2.jpg" alt="" >
+					<p class='description'>2</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/3/redhood_3.html" target="_blank">
+					<img src="redhood_3.jpg" alt="" >
+					<p class='description'>3</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/4/redhood_4.html" target="_blank">
+					<img src="redhood_4.jpg" alt="" >
+					<p class='description'>4</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/5/redhood_5.html" target="_blank">
+					<img src="redhood_5.jpg" alt="" >
+					<p class='description'>5</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/6/redhood_6.html" target="_blank">
+					<img src="redhood_6.jpg" alt="" >
+					<p class='description'>6</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/7/redhood_7.html" target="_blank">
+					<img src="redhood_7.jpg" alt="" >
+					<p class='description'>7</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/8/redhood_8.html" target="_blank">
+					<img src="redhood_8.jpg" alt="" >
+					<p class='description'>8</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/9/redhood_9.html" target="_blank">
+					<img src="redhood_9.jpg" alt="" >
+					<p class='description'>9</p>
+				</a>
+			</li>
+			<li>
+				<a href="http://drugdealers.ru/redhood/10/redhood_10.html" target="_blank">
+					<img src="redhood_10.jpg" alt="" >
+					<p class='description'>10</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+
+			$('#scrollbar').jScrollPane({
+				showArrows: true,
+				horizontalDragMinWidth: 34,
+				horizontalDragMaxWidth: 34
+			});
+			document.body.addEventListener('touchmove', function(event) {
+				event.preventDefault();
+			}, false);
+			document.body.addEventListener('touchend', function(event) {
+				event.preventDefault();
+			}, false);
+		});
+	</script>
+</body>
+</html>
